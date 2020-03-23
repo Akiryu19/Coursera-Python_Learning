@@ -45,6 +45,7 @@ class Grass_Pokemon(Pokemon):
     attack = 15
     defense = 14
     health = 12
+    p_type = "Grass"
 
     def update(self):
         self.health_boost = 6
@@ -57,6 +58,7 @@ class Grass_Pokemon(Pokemon):
     def action(self):
         return "{} knows a lot of different moves!".format(self.name)
     def attack_up(self):
+        self.update()
         if self.attack >= 10:
             self.attack = self.attack + self.attack_boost
             return self.attack
